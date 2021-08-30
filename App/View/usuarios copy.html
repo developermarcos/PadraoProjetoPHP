@@ -1,0 +1,36 @@
+<div class="row">
+    <div class="container-fluid">
+        <p class="lead float-left">
+            Listagem {{Pagina}}
+        </p>
+        <a href="?pagina=editar" class="btn btn-info float-right">Cadastrar</a>
+    </div>
+    <hr>
+    
+    <table class="table table-striped">
+        <thead>
+            <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nome</th>
+            <th scope="col">user</th>
+            <th scope="col">Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for Usuario in Usuarios %}
+                <form action="post">
+                    <tr>
+                        <th scope="row">{{Usuario.ID}}</th>
+                        <td>{{Usuario.UserIdentify}}</td>
+                        <td>{{Usuario.UserName}}</td>
+                        <td>
+                            <a href="?pagina=usuarios&acao=editar&id={{Usuario.ID}}" title="Editar" type="button" class="btn btn-warning"><i class="far fa-edit"></i></a>
+                            <a href="?pagina=usuarios&acao=excluir&id={{Usuario.ID}}" title="Excluir" type="button" class="btn btn-danger" value="{{Usuario.ID}}"><i class="far fa-trash-alt"></i></a>
+                        </td>
+                    </tr>
+                </form>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</div>

@@ -1,0 +1,64 @@
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h4>{{Pagina}}</h4>
+            </div>
+            <div class="card-body">
+                <div class="float-right">
+                    <button class="btn btn-secondary buttons-excel buttons-html5" tabindex="0"
+                        aria-controls="tableExport"><span>Novo</span></button>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-md">
+                        <tbody>
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Nome</th>
+                                    <th scope="col">user</th>
+                                    <th scope="col">Ações</th>
+                                </tr>
+                            </thead>
+                        <tbody>
+                            {% for Usuario in Usuarios %}
+                            <form action="post">
+                                <tr>
+                                    <th scope="row">{{Usuario.ID}}</th>
+                                    <td>{{Usuario.UserIdentify}}</td>
+                                    <td>{{Usuario.UserName}}</td>
+                                    <td>
+                                        <a href="?pagina=usuarios&acao=editar&id={{Usuario.ID}}" title="Editar"
+                                            type="button" class="btn btn-warning"><i class="far fa-edit"></i></a>
+                                        <a href="?pagina=usuarios&acao=excluir&id={{Usuario.ID}}" title="Excluir"
+                                            type="button" class="btn btn-danger" value="{{Usuario.ID}}"><i
+                                                class="far fa-trash-alt"></i></a>
+                                    </td>
+                                </tr>
+                            </form>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- <div class="card-footer text-right">
+                <nav class="d-inline-block">
+                    <ul class="pagination mb-0">
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#" tabindex="-1"><i class="fas fa-chevron-left"></i></a>
+                        </li>
+                        <li class="page-item active"><a class="page-link" href="#">1 <span
+                                    class="sr-only">(current)</span></a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">2</a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#"><i class="fas fa-chevron-right"></i></a>
+                        </li>
+                    </ul>
+                </nav>
+            </div> -->
+        </div>
+    </div>
+</div>
