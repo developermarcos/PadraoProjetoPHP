@@ -21,6 +21,9 @@ class UsuariosController{
         }
     }
     public function CreateUser(){
+        
+    }
+    public function AlterUser(){
         die('aqui2');
     }
 }

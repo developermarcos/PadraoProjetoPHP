@@ -12,6 +12,8 @@
             }else{
                 $controller = 'ErroController';
             }
+            var_dump($controller);
+            var_dump(class_exists($controller));
             
             if(!class_exists($controller)){
                 $controller = 'ErroController';
